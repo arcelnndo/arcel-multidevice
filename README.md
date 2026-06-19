@@ -1,54 +1,60 @@
-Arcel Multi-Device
+# 🤖 Arcel Multi-Device
 
-https://img.shields.io/badge/License-MIT-blue.svg
-https://img.shields.io/badge/node-%3E%3D%2018.0.0-brightgreen
+**Bot WhatsApp multi-perangkat berbasis Node.js — ringan, skalabel, dan siap pakai.**
 
-Arcel Multi-Device adalah bot WhatsApp multi-perangkat (Multi-Device) berbasis Node.js yang dirancang untuk kemudahan penggunaan dan skalabilitas. Bot ini mendukung berbagai fitur canggih, manajemen grup, dan respons otomatis.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D%2018.0.0-brightgreen)](https://nodejs.org)
+[![Platform](https://img.shields.io/badge/platform-WhatsApp%20MD-25D366?logo=whatsapp&logoColor=white)](https://github.com/arcelnndo/arcel-multidevice)
+[![Status](https://img.shields.io/badge/status-active-success)](https://github.com/arcelnndo/arcel-multidevice)
 
----
-
-✨ Fitur Utama
-
-· ✅ Multi-Device Support – Mendukung koneksi multi-perangkat WhatsApp resmi.
-· ✅ Auto-Reply – Balas pesan otomatis berdasarkan kata kunci.
-· ✅ Manajemen Grup – Kick, add, promote, demote, dan pengaturan grup lainnya.
-· ✅ Downloader – Download media dari YouTube, TikTok, Instagram, dan lainnya.
-· ✅ Sticker Maker – Ubah gambar/video menjadi stiker.
-· ✅ Anti-Spam & Filter – Cegah spam dan kata-kata kasar.
-· ✅ Database – Support MongoDB (opsional) untuk penyimpanan data pengguna.
-· ✅ Logging – Pencatatan aktivitas bot secara real-time.
+</div>
 
 ---
 
-📋 Persyaratan Sistem
+## ✨ Fitur Utama
 
-· Node.js v18.0.0 atau lebih baru
-· NPM / Yarn
-· Koneksi internet stabil
-· (Opsional) MongoDB untuk penyimpanan data
+| Fitur | Deskripsi |
+|---|---|
+| 📱 **Multi-Device** | Koneksi multi-perangkat menggunakan protokol resmi WhatsApp MD |
+| 💬 **Auto-Reply** | Balas pesan otomatis berbasis kata kunci yang bisa dikonfigurasi |
+| 👥 **Manajemen Grup** | Kick, add, promote, demote, dan pengaturan grup lainnya |
+| ⬇️ **Downloader** | Download media dari YouTube, TikTok, Instagram, dan lainnya |
+| 🎨 **Sticker Maker** | Konversi gambar/video menjadi stiker WhatsApp secara instan |
+| 🛡️ **Anti-Spam** | Deteksi dan blokir spam serta kata-kata kasar otomatis |
+| 🗄️ **MongoDB** | Penyimpanan data pengguna persisten (opsional) |
+| 📋 **Logging** | Pencatatan aktivitas bot secara real-time |
 
 ---
 
-🚀 Cara Install
+## 📋 Persyaratan
 
-1. Clone Repositori
+- **Node.js** v18.0.0 atau lebih baru
+- **NPM** atau **Yarn**
+- Koneksi internet yang stabil
+- **MongoDB** *(opsional)* — untuk penyimpanan data pengguna
+
+---
+
+## 🚀 Instalasi
+
+### 1. Clone repositori
 
 ```bash
 git clone https://github.com/arcelnndo/arcel-multidevice.git
 cd arcel-multidevice
 ```
 
-2. Install Dependensi
+### 2. Install dependensi
 
 ```bash
 npm install
-# atau jika menggunakan yarn
+# atau
 yarn install
 ```
 
-3. Konfigurasi
+### 3. Buat file konfigurasi
 
-Buat file .env di root folder dan isi dengan konfigurasi berikut:
+Buat file `.env` di root folder:
 
 ```env
 PREFIX=!
@@ -58,99 +64,82 @@ BOT_NAME=ArcelBot
 SESSION_NAME=session
 ```
 
-4. Jalankan Bot
+### 4. Jalankan bot
 
 ```bash
 npm start
-# atau
-node index.js
 ```
 
-Saat pertama kali berjalan, scan kode QR menggunakan WhatsApp di ponsel.
+> Saat pertama kali berjalan, scan kode QR yang muncul menggunakan WhatsApp di ponsel kamu.
 
 ---
 
-📦 Struktur Folder
+## 📦 Struktur Folder
 
 ```
 arcel-multidevice/
-├── commands/          # Folder kode perintah bot
-├── events/            # Event handler (message, join, dll.)
-├── lib/               # Library dan utilitas
-├── database/          # Modul database
-├── plugins/           # Plugin tambahan (jika ada)
-├── .env               # Konfigurasi lingkungan
-├── index.js           # Entry point utama
-├── package.json       # Dependensi dan script
-└── README.md          # Dokumentasi
+├── commands/       # Kode setiap perintah bot
+├── events/         # Handler event (message, join, dll.)
+├── lib/            # Library & utilitas internal
+├── database/       # Modul koneksi & model database
+├── plugins/        # Plugin tambahan (opsional)
+├── .env            # Konfigurasi lingkungan (jangan di-commit!)
+├── index.js        # Entry point utama
+├── package.json    # Dependensi & script
+└── README.md       # Dokumentasi
 ```
 
 ---
 
-🔧 Konfigurasi Lanjutan
+## 🔧 Konfigurasi Lanjutan
 
-Mengubah Prefix
+**Mengubah prefix** — edit nilai `PREFIX` di file `.env` atau `config.js`.
 
-Edit nilai PREFIX di file .env atau di file config.js.
+**Menambah auto-reply** — buka `config/autoreply.js` dan tambahkan kata kunci beserta responsnya.
 
-Menambah Kata Kunci Auto-Reply
-
-Buka file config/autoreply.js dan tambahkan kata kunci serta respons yang diinginkan.
-
-Mengaktifkan MongoDB
-
-Pastikan MONGODB_URI sudah terisi dan service MongoDB berjalan.
+**Mengaktifkan MongoDB** — pastikan `MONGODB_URI` sudah terisi dan service MongoDB sedang berjalan.
 
 ---
 
-📌 Daftar Perintah (Contoh)
+## 📌 Daftar Perintah
 
-Perintah Deskripsi
-!menu Menampilkan menu utama bot
-!ping Cek status bot
-!sticker Ubah gambar menjadi stiker
-!yt Download video dari YouTube
-!info Info pengguna atau bot
-!kick Kick anggota grup
-!add Tambah anggota grup
+| Perintah | Deskripsi |
+|---|---|
+| `!menu` | Tampilkan semua perintah yang tersedia |
+| `!ping` | Cek status dan latensi bot |
+| `!sticker` | Konversi gambar/video (reply) menjadi stiker |
+| `!yt` | Download video atau audio dari YouTube |
+| `!info` | Lihat info akun pengguna atau bot |
+| `!kick` | Keluarkan anggota dari grup *(perlu admin)* |
+| `!add` | Tambahkan nomor ke dalam grup |
 
-Untuk daftar lengkap, ketik !menu setelah bot aktif.
-
----
-
-⚠️ Catatan Penting
-
-· Bot ini hanya untuk tujuan edukasi dan hiburan. Gunakan dengan bijak.
-· Jangan gunakan untuk spam atau aktivitas melanggar kebijakan WhatsApp.
-· Kami tidak bertanggung jawab atas penyalahgunaan bot ini.
+Ketik `!menu` setelah bot aktif untuk melihat daftar lengkapnya.
 
 ---
 
-🤝 Kontribusi
+## 🤝 Kontribusi
 
-Kontribusi sangat terbuka! Jika ingin menambahkan fitur atau memperbaiki bug, silakan buat pull request atau laporkan melalui issue.
+Pull request dan laporan bug sangat terbuka!
 
-Langkah Kontribusi:
-
-1. Fork repositori ini.
-2. Buat branch baru: git checkout -b fitur-baru.
-3. Commit perubahan: git commit -m "Add fitur baru".
-4. Push ke branch: git push origin fitur-baru.
-5. Buka Pull Request.
-
----
-
-📄 Lisensi
-
-Proyek ini dilisensikan di bawah MIT License – lihat file LICENSE untuk detail lebih lanjut.
+```bash
+# 1. Fork repositori ini, lalu:
+git checkout -b fitur-baru
+git commit -m "Add fitur baru"
+git push origin fitur-baru
+# 2. Buka Pull Request di GitHub
+```
 
 ---
 
-🙏 Terima Kasih
+## ⚠️ Disclaimer
 
-Terima kasih telah menggunakan Arcel Multi-Device!
-Jika ada pertanyaan atau masalah, hubungi saya melalui GitHub Issues.
+Bot ini dibuat untuk **tujuan edukasi dan hiburan**. Jangan gunakan untuk spam atau aktivitas yang melanggar kebijakan WhatsApp. Kami tid
+## 📄 Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
 
 ---
 
-😊 Happy Coding!
+<div align="center">
+
+Dibuat dengan oleh [arcelnndo](https://github.com/arcelnndo) · [Laporkan Bug](https://github.com/arcelnndo/arcel-multidevice/issues
