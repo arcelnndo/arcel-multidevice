@@ -1,0 +1,44 @@
+{
+  "selfMode": false,
+  "ownerNumbers": [],
+  "ownerType": 3,
+  "welcomeType": 4,
+  "replyVariant": 7,
+  "menuVariant": 1,
+  "botAfk": {
+    "active": false
+  },
+  "cmdVn": false,
+  "autoSholatKota": {
+    "id": "2622",
+    "nama": "KOTA MAKASSAR"
+  },
+  "onlyGc": true,
+  "onlyPc": false,
+  "giveaways": {},
+  "botMode": "public",
+  "audioMenu": false,
+  "transactionSessions": {},
+  "premiumUsers": [],
+  "similarity": false,
+  "botRules": "1. dilarang gay \n2. hormat",
+  "goodbyeType": 4,
+  "onlyAdmin": false,
+  "selfAdmin": false,
+  "publicAdmin": false,
+  "_lastEnergiDefault": 99999,
+  "_lastEnergiPremium": 99999999,
+  "lastLimitReset": "2026-04-17T17:00:00.597Z",
+  "storeList": {
+    "zahrachann": {
+      "content": "jadi gimn",
+      "imagePath": null,
+      "hasImage": false,
+      "createdBy": "6281511214289@s.whatsapp.net",
+      "createdByName": "nndo",
+      "createdAt": "2026-04-16T17:20:41.655Z",
+      "updatedAt": "2026-04-16T17:20:41.655Z",
+      "views": 1
+    }
+  }
+}
